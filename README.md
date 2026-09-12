@@ -1,7 +1,7 @@
 # Riley
 Riley is a homelab media platform backing custom Roku and Android TV clients.
 
-<img src="/riley-logo.png" alt="Riley logo" width="300">
+<img src="/riley-logo.png" alt="Riley logo" width="150">
 
 ## Tech stack
 
