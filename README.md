@@ -4,6 +4,7 @@ Riley is a homelab media platform for nostalgic home videos. It serves custom Ro
 - [`riley`](https://github.com/marlware/riley) is the backend repo
 - [`riley-roku`](https://github.com/marlware/riley-roku) is the Roku client repo
 - [`riley-android-tv`](https://github.com/marlware/riley-android-tv) is the Android TV repo
+- [`riley-tvos`](https://github.com/marlware/riley-tvos) is the Apple tvOS repo
 
 
 <img src="/riley-logo.png" alt="Riley logo" width="150">
