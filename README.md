@@ -2,7 +2,9 @@
 
 Riley is a self-hosted media platform for streaming a family home-video library across Roku, Android TV, and Apple TV.
 
-## Repositories
+<img src="/riley.gif" alt="Riley GIF" width="300">
+
+### Secondary repositories
 
 - [`riley`](https://github.com/marlware/riley) — backend media platform
 - [`riley-roku`](https://github.com/marlware/riley-roku) — Roku client
@@ -46,4 +48,3 @@ flowchart LR
 - cross-device playback-state synchronization
 - thumbnail generation pipeline
 - quality-of-experience telemetry
-- multi-device family video library
