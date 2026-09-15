@@ -1,33 +1,49 @@
 # Riley
-Riley is a homelab media platform for nostalgic home videos. It serves custom Roku and Android TV clients.
 
-- [`riley`](https://github.com/marlware/riley) is the backend repo
-- [`riley-roku`](https://github.com/marlware/riley-roku) is the Roku client repo
-- [`riley-android-tv`](https://github.com/marlware/riley-android-tv) is the Android TV repo
-- [`riley-tvos`](https://github.com/marlware/riley-tvos) is the Apple tvOS repo
+Riley is a self-hosted media platform for streaming a family home-video library across Roku, Android TV, and Apple TV.
 
+## Repositories
 
-<img src="/riley-logo.png" alt="Riley logo" width="150">
-
+- [`riley`](https://github.com/marlware/riley) — backend media platform
+- [`riley-roku`](https://github.com/marlware/riley-roku) — Roku client
+- [`riley-android-tv`](https://github.com/marlware/riley-android-tv) — Android TV client
+- [`riley-tvos`](https://github.com/marlware/riley-tvos) — Apple TV client
 
 ## Tech stack
 
-Riley is a self-hosted connected-TV streaming platform with...
+- BrightScript + SceneGraph (Roku)
+- Kotlin + Media3 (Android TV)
+- Swift + tvOS (Apple TV)
+- HLS (adaptive video streaming)
+- Homelab server (self-hosted backend)
 
-- clients
-  - Roku [`riley-roku`](https://github.com/marlware/riley-roku)
-    - BrightScript
-    - SceneGraph
-  - Android TV [`riley-android-tv`](https://github.com/marlware/riley-android-tv)
-    - Kotlin
-    - Media3
-- backed by a homelab media platform
-  - my old laptop with 4GB RAM
-- that will implement
-  - HLS transcoding
-  - content discovery
-  - playback-state synchronization
-  - thumbnail pipelines
-  - quality-of-experience telemetry
+### System architecture
 
-for a multi-device family video library.
+```mermaid
+flowchart LR
+    MEDIA["Family Video Library"]
+    RILEY["Riley<br/>Homelab Media Platform"]
+
+    ROKU["Roku<br/>BrightScript · SceneGraph"]
+    ANDROID["Android TV<br/>Kotlin · Media3"]
+    TVOS["Apple TV<br/>Swift · tvOS"]
+
+    MEDIA --> RILEY
+
+    RILEY -->|HLS| ROKU
+    RILEY -->|HLS| ANDROID
+    RILEY -->|HLS| TVOS
+
+    ROKU <-->|playback state · telemetry| RILEY
+    ANDROID <-->|playback state · telemetry| RILEY
+    TVOS <-->|playback state · telemetry| RILEY
+```
+
+## Planned features
+
+- HLS transcoding
+- content discovery and browsing
+- cross-device playback-state synchronization
+- thumbnail generation pipeline
+- quality-of-experience telemetry
+- multi-device family video library
